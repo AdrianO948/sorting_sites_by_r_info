@@ -17,7 +17,11 @@ def open_file_and_write_content_into_list(file_name):
 def getting_requests_codes_into_dict(list_of_sites):
     dict_of_responses = {}
     for site in list_of_sites:
-        dict_of_responses[site] = requests.get(site).status_code
+        try:
+            dict_of_responses[site] = requests.get(site).status_code
+        except requests.exceptions.MissingSchema:
+            print(f"The link {site} you provided is missing 'https'")
+            dict_of_responses[site] = 'INVALID'
 
     return dict_of_responses
 
