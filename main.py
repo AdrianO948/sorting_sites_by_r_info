@@ -11,7 +11,7 @@ for site in sitesListed:
 
 for key, value in dictOfResponses.items():
     try:
-        with open(f'{value}.txt', 'a') as f:
+        with open(f'{value}.txt', 'a')as f:
             f.write(key + '\n')
     except FileNotFoundError:
         with open(f'{value}.txt', 'w')as f:
