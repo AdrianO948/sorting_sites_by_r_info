@@ -6,7 +6,7 @@ def open_file_and_write_content_into_list(file_name):
         try:
             file_to_read = open(f'{file_name}', 'r')
         except FileNotFoundError:
-            file_name = input('File not found! Please enter valid file name (without extension): ')
+            file_name = input('File not found! Please enter valid file name (without extension): ' + '.txt')
             continue
         else:
             split_lines_list = file_to_read.read().split(',')
@@ -32,7 +32,7 @@ def writing_request_codes_to_files(dictionary_of_responses):
                 f.write(key + '\n')
 
 
-fileName = 'sites_.txt'
+fileName = 'sites_to_sort.txt'
 listedSites = open_file_and_write_content_into_list(fileName)
 dictOfResponses = getting_requests_codes_into_dict(listedSites)
 writing_request_codes_to_files(dictOfResponses)
