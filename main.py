@@ -6,7 +6,7 @@ def open_file_and_write_content_into_list(file_name):
         try:
             file_to_read = open(f'{file_name}', 'r')
         except FileNotFoundError:
-            file_name = input('File not found! Please enter valid file name: ')
+            file_name = input('File not found! Please enter valid file name (without extension): ')
             continue
         else:
             split_lines_list = file_to_read.read().split(',')
