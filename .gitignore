@@ -161,5 +161,7 @@ cython_debug/
 # Default ignored files
 /shelf/
 /workspace.xml
+[0-9]*
+INVALID.txt
 
 
